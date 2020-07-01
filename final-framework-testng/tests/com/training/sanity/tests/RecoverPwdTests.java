@@ -3,7 +3,7 @@
  * Test Case Description: To verify whether application allows the user to recover the password
  * Pre Condition: user should have launched the application by entering valid URL
                   user should register by entering valid credentials
- * Last Updated: 07/01/2020
+ * Last Updated: 07/01/2020-
  */
 
 package com.training.sanity.tests;

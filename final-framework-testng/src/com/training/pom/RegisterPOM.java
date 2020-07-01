@@ -1,7 +1,7 @@
 /* Test Case id: RETC_001
  * Test Case Description: To verify whether application allows the user to get registered upon entering valid credentials
  * Pre Condition: user should have launched the application by entering valid URL
- * Last Updated: 07/01/2020
+ * Last Updated: 07/01/2020-
  */
 package com.training.pom;
 

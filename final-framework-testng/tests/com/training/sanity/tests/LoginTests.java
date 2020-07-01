@@ -2,7 +2,7 @@
  * Test Case Description: To Verify whether application allows registered user to login into application
  * Pre Condition: user should have launched the application by entering valid URL
                   user should register by entering valid credentials
- * Last Updated: 07/01/2020
+ * Last Updated: 07/01/2020-
  */
 
 package com.training.sanity.tests;
@@ -69,7 +69,7 @@ public class LoginTests {
         String Userpass="manzoor";
         loginPOM.sendUser_pass(Userpass);
 		WebElement UserPassword=driver.findElement(By.id("user_pass"));//Fetching Entered credentials in User name
-		String Actual_UserPassword =UserPassword.getAttribute("value");//To Validate Password	
+		String Actual_UserPassword =UserPassword.getAttribute("value");//To Validate Password	-
         Assert.assertEquals(Actual_UserPassword, Userpass);
         		
         loginPOM.clickLoginBtn();
