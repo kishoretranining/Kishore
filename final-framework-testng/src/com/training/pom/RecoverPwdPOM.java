@@ -1,3 +1,10 @@
+
+/* Test Case id: RETC-003
+ * Test Case Description: To verify whether application allows the user to recover the password
+ * Pre Condition: user should have launched the application by entering valid URL
+                  user should register by entering valid credentials
+ * Last Updated: 07/01/2020
+ */
 package com.training.pom;
 
 import org.openqa.selenium.WebDriver;
@@ -24,6 +31,9 @@ private WebDriver driver;
 	
 	@FindBy(xpath="//input[@name='submit']")
 	private WebElement ResetPasswordBtn;
+	
+	@FindBy(xpath="//p[contains(text(),'confirmation mail should be sent to registered mail id')]")
+	private WebElement registerMsg;
 
 	public void clickLoginRegister() {
 		this.login_register.click(); 
@@ -42,6 +52,10 @@ private WebDriver driver;
 	
 	public void ClickResetPasswordBtn() {
 		this.ResetPasswordBtn.click(); 
+	}
+	
+	public Boolean ActualResult() {
+		return this.registerMsg.isDisplayed();
 	}
 }
 

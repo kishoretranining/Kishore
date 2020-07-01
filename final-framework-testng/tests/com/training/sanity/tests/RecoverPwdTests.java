@@ -1,3 +1,11 @@
+
+/* Test Case id: RETC-003
+ * Test Case Description: To verify whether application allows the user to recover the password
+ * Pre Condition: user should have launched the application by entering valid URL
+                  user should register by entering valid credentials
+ * Last Updated: 07/01/2020
+ */
+
 package com.training.sanity.tests;
 
 import java.io.FileInputStream;
@@ -36,11 +44,12 @@ public class RecoverPwdTests {
 
 	@BeforeMethod
 	public void setUp() throws Exception {
+		// declaration and instantiation of objects/variables
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		recoverPwdPOM = new RecoverPwdPOM(driver); 
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
-		// open the browser 
+		// launch Chrome and direct it to the Base URL 
 		driver.get(baseUrl);
 
 	}
@@ -57,23 +66,13 @@ public class RecoverPwdTests {
 		String Email="manzoor@gmail.com";
 		recoverPwdPOM.sendEmail(Email);
 		WebElement TEmail=driver.findElement(By.id("user_login"));
-		String Actual_TEmail =TEmail.getAttribute("value");
-        Assert.assertEquals(Actual_TEmail, Email);
+		String Actual_TEmail =TEmail.getAttribute("value");//Fetching Entered credentials in Email
+        Assert.assertEquals(Actual_TEmail, Email);//To Validate Email id
     	recoverPwdPOM.ClickResetPasswordBtn();
-    	try
-    	{
-    		boolean display = false;
-		 Boolean Display=driver.findElement(By.xpath("//p[contains(text(),'confirmation mail should be sent to registered mail id')]")).isDisplayed();
-		 if (Display) {
-			  display = true;
-				Assert.assertEquals(display, "true");  
-		 }
-    	} catch (NoSuchElementException e) {
-    		boolean display = false;
-			Assert.assertEquals(display, "False");  
-    	}
-    			 
-	screenShot.captureScreenShot("First");
-        
+    	
+	    Boolean ActualResult_value=recoverPwdPOM.ActualResult(); 
+   	    Assert.assertTrue(ActualResult_value);// to validate A confirmation link has been sent to your email address text
+        screenShot.captureScreenShot("First");
+    
 		}
 }

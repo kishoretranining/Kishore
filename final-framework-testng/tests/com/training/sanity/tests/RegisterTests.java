@@ -1,3 +1,9 @@
+
+/* Test Case id: RETC_001
+ * Test Case Description: To verify whether application allows the user to get registered upon entering valid credentials
+ * Pre Condition: user should have launched the application by entering valid URL
+ * Last Updated: 07/01/2020
+ */
 package com.training.sanity.tests;
 
 import java.io.FileInputStream;
@@ -35,11 +41,12 @@ public class RegisterTests {
 
 	@BeforeMethod
 	public void setUp() throws Exception {
+		// declaration and instantiation of objects/variables
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		registerPOM = new RegisterPOM(driver); 
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
-		// open the browser 
+		// launch Chrome and direct it to the Base URL
 		driver.get(baseUrl);
 
 	}
@@ -51,29 +58,26 @@ public class RegisterTests {
 	}
 	@Test
 	public void validRegisterTest() throws Exception {
-		registerPOM.clickLoginRegister();
+		registerPOM.clickLoginRegister();// To display registration screen 
 		registerPOM.clickRegTab();
-		String Email="kishore.marri@gmail.com";
+		String Email="testt.teest@gmail.com";
 		registerPOM.sendEmail(Email);
 	
-        
-        String TFname="Kumar";
+        String TFname="Kumarre";
 		registerPOM.sendFirstname(TFname);
 		WebElement Fname=driver.findElement(By.id("first-name"));
-		String Actual_Fname =Fname.getAttribute("value");
-        Assert.assertEquals(Actual_Fname, TFname);
+		String Actual_Fname =Fname.getAttribute("value");//Pulling Entered credentials in First name
+        Assert.assertEquals(Actual_Fname, TFname);//To Validate First name
         
         String TLname="M";
         registerPOM.sendLastname(TLname);
 		WebElement Tlname=driver.findElement(By.id("last-name"));
-		String Actual_Lname =Tlname.getAttribute("value");
-        Assert.assertEquals(Actual_Lname, TLname);
+		String Actual_Lname =Tlname.getAttribute("value");//Pulling Entered credentials in Last name
+        Assert.assertEquals(Actual_Lname, TLname);//To Validate Last name
         		
 		registerPOM.clickRegisterBtn();
-		Boolean Display=driver.findElement(By.xpath("//p[contains(text(),'You have successfully registered to')]")).isDisplayed();
-		 if (Display) {
-			 System.out.println("Registered successfully.");
-		 }
-	screenShot.captureScreenShot("First");
+   	    Boolean ActualResult_value=registerPOM.ActualResult(); 
+   	    Assert.assertTrue(ActualResult_value);// To validate msg You have successfully registered to Real Estate
+        screenShot.captureScreenShot("First");
 	}
 }

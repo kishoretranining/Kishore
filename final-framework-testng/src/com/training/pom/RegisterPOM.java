@@ -1,5 +1,11 @@
+/* Test Case id: RETC_001
+ * Test Case Description: To verify whether application allows the user to get registered upon entering valid credentials
+ * Pre Condition: user should have launched the application by entering valid URL
+ * Last Updated: 07/01/2020
+ */
 package com.training.pom;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,6 +38,9 @@ public class RegisterPOM {
 	@FindBy(xpath="//input[@CLASS='register-button']")
 	private WebElement registerBtn;
 	
+	@FindBy(xpath="//p[contains(text(),'You have successfully registered to')]")
+	private WebElement registerMsg;
+	
 	public void clickLoginRegister() {
 		this.login_register.click(); 
 	}
@@ -63,4 +72,9 @@ public class RegisterPOM {
 	public void clickRegisterBtn() {
 		this.registerBtn.click(); 
 	}
+	
+	public Boolean ActualResult() {
+		return this.registerMsg.isDisplayed();
+	}
+	
 }
