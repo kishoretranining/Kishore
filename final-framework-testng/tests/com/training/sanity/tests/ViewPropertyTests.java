@@ -3,7 +3,7 @@
  * Test Case Description: TO verify whether application allows admin to view added property details in All Properties window
  * Pre Condition: user should have launched the application by entering valid URL
                   admin should be logged in
- * Last Updated: 07/02/2020
+ * Last Updated: 07/02/2020--
  */
 
 package com.training.sanity.tests;
