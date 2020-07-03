@@ -3,7 +3,7 @@
  * Test Case Severity: Meidum
  * Test Case Description: To verify whether application allows admin to add new property with all details
  * Pre Condition: user should have launched the application by entering valid URL
-                  admin should be logged in
+                  -admin should be logged in
  * Last Updated: 07/02/2020
  */
 package com.training.pom;
