@@ -49,7 +49,7 @@ public class ApachePOIExcelRead {
 				// For each row, iterate through all the columns
 				Iterator<Cell> cellIterator = row.cellIterator();
 
-				int cellCount = 0; 
+				int cellCount = 1; 
 				int noOfColumns = row.getLastCellNum(); 
 				String[] tempList1 = new String[noOfColumns];
 				
@@ -88,8 +88,8 @@ public class ApachePOIExcelRead {
 		return list1;
 	}
 
-	public static void main(String[] args) {
-		String fileName = "C:/Users/Naveen/Desktop/Testing.xlsx";
+	/*public static void main(String[] args) {
+		String fileName = "C:\\SelTraining\\TestData\\HighLevelTestcasedata.xlsx";
 		
 		for(String [] temp : new ApachePOIExcelRead().getExcelContent(fileName)){
 			for(String  tt : temp){
@@ -97,5 +97,5 @@ public class ApachePOIExcelRead {
 			}
 		}
 
-	}
+	}*/
 }

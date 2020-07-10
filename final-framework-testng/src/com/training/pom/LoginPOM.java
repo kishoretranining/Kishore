@@ -35,6 +35,9 @@ public class LoginPOM {
 	@FindBy(xpath="//h2[contains(text(),'My Profile')]")
 	private WebElement registerMsg;
 	
+	@FindBy(xpath="//p[contains(text(),'The email address you entered is not valid.')]")
+	private WebElement invalidregisterMsg;
+	
 	public void clickLoginRegister() {
 		this.login_register.click(); 
 	}
@@ -56,5 +59,10 @@ public class LoginPOM {
 	public Boolean ActualResult() {
 		return this.registerMsg.isDisplayed();
 	}
+	
+	public Boolean InvalidregisterMsg() {
+		return this.invalidregisterMsg.isDisplayed();
+	}
+	
 	
 }

@@ -1,7 +1,9 @@
-create table login(
-username varchar(50) not null,
-password varchar(50));
+create table RegisterDBvalue(
+Email varchar(50) not null,
+TFname varchar(50),
+TLname varchar(50)
+);
 
 
-insert into login values("admin", "admin@123"); 
-insert into login values("naveen", "testing@123"); 
+insert into RegisterDBvalue values("manzoorone@gmail.com", "TestFname","TestLname"); 
+insert into RegisterDBvalue values("manzoortwo@gmail.com", "TestFnameone","TestLnameone"); 
