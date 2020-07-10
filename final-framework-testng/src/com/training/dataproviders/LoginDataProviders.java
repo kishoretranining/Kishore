@@ -40,7 +40,7 @@ public class LoginDataProviders {
 	
 	@DataProvider(name = "excel-invalidinputs")
 	public Object[][] getMSExcelData(){
-		String fileName ="C:\\SelTraining\\TestData\\HighLevelTestcasedata.xlsx"; 
+		String fileName ="C:\\SelTraining\\TestData\\HighLevelinvalidTestcasedata.xlsx"; 
 		return new ApachePOIExcelRead().getExcelContent(fileName); 
 	}
 	

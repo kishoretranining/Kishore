@@ -2,7 +2,7 @@
  * Test Case Description: To Verify whether application allows registered user to login into application
  * Pre Condition: user should have launched the application by entering valid URL
                   user should register by entering valid credentials
- * Last Updated: 07/10/2020-
+ * Last Updated: 07/10/2020
  */
 
 package com.training.regression.tests;
